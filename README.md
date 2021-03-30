@@ -1,14 +1,25 @@
-# app
-
-A Clojure library designed to ... well, that part is up to you.
+# Test task
 
 ## Usage
 
-FIXME
+```bash
+$ lein repl
+```
+
+and then, in REPL
+
+```clojure
+;; note the below function might generate non-acyclic graph, so longest path might not work (as well as eccentrity for such graph)
+(def G (make-graph 10 10))
+(shortest-path G :1 :10)
+(longest-path G :1 :10)
+(radius G)
+(diameter G)
+```
 
 ## License
 
-Copyright © 2021 FIXME
+Copyright © 2021 Artem Shubovych
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
