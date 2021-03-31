@@ -1,4 +1,4 @@
-(ns graph)
+(ns audiencerepublic.graph)
 
 (defn- reconstruct-path
   "Reconstructs a path from a dijkstra representation to a sequence of vertices"
