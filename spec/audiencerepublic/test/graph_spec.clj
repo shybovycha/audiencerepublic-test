@@ -39,4 +39,56 @@
                                                                  :4 []}
                                                                 :4 :1))))))
 
+(describe "eccentricity"
+          (describe "in acyclic graph"
+                    (it "should be the longest path for existing path"
+                        (should= 5
+                                 (eccentricity {:1 [[:2 1], [:3 2]]
+                                                :2 [[:4 4]]
+                                                :3 [[:4 2]]
+                                                :4 []}
+                                               :1)))
+
+                    (it "should be the longest path for existing path"
+                        (should= 4
+                                 (eccentricity {:1 [[:2 1], [:3 2]]
+                                                :2 [[:4 4]]
+                                                :3 [[:4 2]]
+                                                :4 []}
+                                               :2)))
+
+                    (it "should be the longest path for existing path"
+                        (should= 2
+                                 (eccentricity {:1 [[:2 1], [:3 2]]
+                                                :2 [[:4 4]]
+                                                :3 [[:4 2]]
+                                                :4 []}
+                                               :3)))
+
+                    (it "should be nil for non-existing path"
+                        (should-be-nil
+                         (eccentricity {:1 [[:2 1], [:3 2]]
+                                        :2 [[:4 4]]
+                                        :3 [[:4 2]]
+                                        :4 []}
+                                       :4)))))
+
+(describe "radius"
+          (describe "in acyclic graph"
+                    (it "should be the smallest eccentricity"
+                        (should= 2
+                                 (radius {:1 [[:2 1], [:3 2]]
+                                          :2 [[:4 4]]
+                                          :3 [[:4 2]]
+                                          :4 []})))))
+
+(describe "diameter"
+          (describe "in acyclic graph"
+                    (it "should be the largest eccentricity"
+                        (should= 5
+                                 (diameter {:1 [[:2 1], [:3 2]]
+                                            :2 [[:4 4]]
+                                            :3 [[:4 2]]
+                                            :4 []})))))
+
 (run-specs)
