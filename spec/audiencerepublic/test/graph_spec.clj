@@ -91,4 +91,15 @@
                                             :3 [[:4 2]]
                                             :4 []})))))
 
+(describe "make-graph"
+          (describe "should generate a graph"
+                    (it "as a map"
+                        (should-be map? (make-graph 4 6)))
+
+                    (it "with given amount of vertices"
+                        (should= 4 (count (keys (make-graph 4 6)))))
+
+                    (it "with given amount of edges"
+                        (should= 7 (count (reduce-kv (fn [acc _ v] (concat acc v)) [] (make-graph 4 7)))))))
+
 (run-specs)
