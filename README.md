@@ -17,6 +17,9 @@ and then, in REPL
 (diameter G)
 ```
 
+You can also run tests using `lein spec` or in watch mode, `lein spec -a`.
+The tests are made with good old speclj (because of my endless love towards Ruby and RSpec).
+
 ## License
 
 Copyright © 2021 Artem Shubovych
