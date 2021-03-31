@@ -1,6 +1,6 @@
 (ns audiencerepublic.test.graph-spec
-  (:require [speclj.core :refer :all]
-            [audiencerepublic.graph :refer :all]))
+  (:require [speclj.core :refer [describe it should-be should-be-nil should= run-specs]]
+            [audiencerepublic.graph :refer [eccentricity shortest-path radius diameter make-graph]]))
 
 (describe "shortest-path"
           (describe "in acyclic graph"
